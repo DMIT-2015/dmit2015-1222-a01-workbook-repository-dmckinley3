@@ -30,5 +30,11 @@ public class Rectangle {
     public double area(){
         return width * theLength;
     }
+    public double perimeter(){
+        return 2* (theLength + width);
+    }
+    public double diagonal(){
+        return Math.sqrt(Math.pow(theLength,2) + Math.pow(width,2));
+    }
 
 }
