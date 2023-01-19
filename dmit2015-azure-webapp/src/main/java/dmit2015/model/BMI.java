@@ -1,6 +1,8 @@
 package dmit2015.model;
 
 public class BMI {
+    public int height;
+
     public int weight;
 
     public int getHeight() {
@@ -11,9 +13,13 @@ public class BMI {
         this.height = height;
     }
 
-    public int height;
 
     public BMI() {
+    }
+
+    public BMI(int height, int weight) {
+        this.height = height;
+        this.weight = weight;
     }
 
     public int getWeight() {
@@ -28,8 +34,9 @@ public class BMI {
         return (703 * weight) / (height * height);
     }
 
+
     public String bmiCategory() {
-        String bmiCat;
+        String bmiCat = "";
         if (this.bmi() <= 30) {
             if (this.bmi() < 18.5) {
                 bmiCat = "underweight";
@@ -43,7 +50,7 @@ public class BMI {
         } else {
             bmiCat = "obese";
         }
-        return bmiCategory();
+        return bmiCat;
     }
 
 }
