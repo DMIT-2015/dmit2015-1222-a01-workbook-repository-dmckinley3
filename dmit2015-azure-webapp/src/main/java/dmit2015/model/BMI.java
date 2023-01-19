@@ -37,15 +37,15 @@ public class BMI {
 
     public String bmiCategory() {
         String bmiCat = "";
-        double bmi = bmi();
-        if (bmi <= 30) {
-            if (bmi < 18.5) {
+
+        if (bmi() <= 30) {
+            if (bmi() < 18.5) {
                 bmiCat = "underweight";
             }
-            if (bmi >= 18.5 && bmi() <= 24.9) {
+            if (bmi() >= 18.5 && bmi() <= 24.9) {
                 bmiCat = "normal";
             }
-            if (bmi >= 25 && bmi() <= 29.9) {
+            if (bmi() >= 25 && bmi() <= 29.9) {
                 bmiCat = "overweight";
             }
         } else {

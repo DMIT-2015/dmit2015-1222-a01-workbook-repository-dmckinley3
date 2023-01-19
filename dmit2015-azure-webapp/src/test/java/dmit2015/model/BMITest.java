@@ -24,4 +24,19 @@ class BMITest {
         assertEquals(expectedCat, person.bmiCategory());
 
     }
+
+    @ParameterizedTest(name = "weight = {0}, height = {1}, expected bmi = {2} ")
+    @CsvSource({
+            "100,66,16.1",
+            "140,66,22.6",
+            "175,66,28.2",
+            "200,66,32.3"
+    })
+    void bmi_validBMI_ReturnsCorrectResults(int weight, int height, double expectedbmi) {
+        //Arrange & act
+        BMI person = new BMI(height, weight);
+        //Assert
+        assertEquals(expectedbmi, person.bmi(), 0.7);
+
+    }
 }
