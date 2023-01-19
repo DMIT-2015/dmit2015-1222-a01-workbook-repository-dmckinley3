@@ -13,15 +13,6 @@ public class BMI {
         this.height = height;
     }
 
-
-    public BMI() {
-    }
-
-    public BMI(int height, int weight) {
-        this.height = height;
-        this.weight = weight;
-    }
-
     public int getWeight() {
         return weight;
     }
@@ -30,6 +21,15 @@ public class BMI {
         this.weight = weight;
     }
 
+    public BMI() {
+    }
+
+    public BMI(int height, int weight) {
+        setHeight(height);
+        setWeight(weight);
+    }
+
+
     public double bmi() {
         return (703 * weight) / (height * height);
     }
@@ -37,14 +37,15 @@ public class BMI {
 
     public String bmiCategory() {
         String bmiCat = "";
-        if (this.bmi() <= 30) {
-            if (this.bmi() < 18.5) {
+        double bmi = bmi();
+        if (bmi <= 30) {
+            if (bmi < 18.5) {
                 bmiCat = "underweight";
             }
-            if (this.bmi() >= 18.5 && bmi() <= 24.9) {
+            if (bmi >= 18.5 && bmi() <= 24.9) {
                 bmiCat = "normal";
             }
-            if (this.bmi() >= 25 && bmi() <= 29.9) {
+            if (bmi >= 25 && bmi() <= 29.9) {
                 bmiCat = "overweight";
             }
         } else {
