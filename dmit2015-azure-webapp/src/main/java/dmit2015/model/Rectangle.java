@@ -1,40 +1,21 @@
 package dmit2015.model;
 
+import lombok.Data;
+
+@Data
 public class Rectangle {
-    private double theLength;
+    private double length;
+
     private double width;
 
-    public double getLength() {
-        return theLength;
-    }
-
-    public void setLength(double length) {
-        this.theLength = length;
-    }
-
-    public double getWidth() {
-        return width;
-    }
-
-    public void setWidth(double width) {
-        this.width = width;
-    }
-
-    public Rectangle() {
-    }
-
-    public Rectangle(double theLength, double width) {
-        this.theLength = theLength;
-        this.width = width;
-    }
     public double area(){
-        return width * theLength;
+        return width * length;
     }
     public double perimeter(){
-        return 2* (theLength + width);
+        return 2* (length + width);
     }
     public double diagonal(){
-        return Math.sqrt(Math.pow(theLength,2) + Math.pow(width,2));
+        return Math.sqrt(Math.pow(length,2) + Math.pow(width,2));
     }
 
 }
