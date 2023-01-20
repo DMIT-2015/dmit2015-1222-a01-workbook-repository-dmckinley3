@@ -1,7 +1,15 @@
 package dmit2015.model;
 
+/**
+ * This class model is a circle shape
+ *
+ * @author David
+ * @version 2023.01.20
+ **/
 public class Circle {
-
+    /**
+     * The Radius of this circle.
+     **/
     private double radius;
 
     public double getRadius() {
@@ -17,6 +25,12 @@ public class Circle {
 //    }
 
     // Runtime exception example
+
+    /**
+     * Change the radius of this circle.
+     *
+     * @param radius the new radius of the circle.
+     */
     public void setRadius(double radius) {
         if (radius <= 0) {
             throw new RuntimeException("Radius must be a positive non-zero number");
@@ -34,20 +48,34 @@ public class Circle {
         setRadius(radius);
     }
 
-    public double area()
-    {
+    /**
+     * Compute and return the area of this circle
+     *
+     * @return area of this circle
+     **/
+    public double area() {
         return Math.PI * radius * radius;
     }
 
-    public double diameter()
-    {
-        return 2  * radius;
+    /**
+     * Compute and return the diameter of this circle
+     *
+     * @return diameter of this circle
+     **/
+    public double diameter() {
+        return 2 * radius;
     }
-public double circumference(){
+
+    /**
+     * Compute and return the circumference of this circle
+     *
+     * @return circumference of this circle
+     **/
+    public double circumference() {
         return 2 * Math.PI * radius;
-}
-    public static void main(String[] args)
-    {
+    }
+
+    public static void main(String[] args) {
         // Create a Circle with a radius of 1
         Circle circle1 = new Circle();
         // The radius of circle1 should be 1,
@@ -68,13 +96,10 @@ public double circumference(){
 
         // Change the radius of circle1 to -25
         // It should throw an exception
-        try
-        {
+        try {
             circle1.setRadius(-25);
             System.out.println("A exception should have been thrown");
-        }
-        catch (Exception ex)
-        {
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
     }

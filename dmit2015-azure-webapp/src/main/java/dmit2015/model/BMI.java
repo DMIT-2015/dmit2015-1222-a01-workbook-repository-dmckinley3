@@ -31,7 +31,7 @@ public class BMI {
 
 
     public double bmi() {
-        return (703 * weight) / (height * height);
+        return Math.round(703 * weight) / Math.round(height * height);
     }
 
 

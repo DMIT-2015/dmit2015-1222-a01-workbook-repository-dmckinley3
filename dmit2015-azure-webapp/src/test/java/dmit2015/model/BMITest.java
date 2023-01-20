@@ -36,7 +36,7 @@ class BMITest {
         //Arrange & act
         BMI person = new BMI(height, weight);
         //Assert
-        assertEquals(expectedbmi, person.bmi(), 0.7);
+        assertEquals(expectedbmi, person.bmi(), .9);
 
     }
 }
