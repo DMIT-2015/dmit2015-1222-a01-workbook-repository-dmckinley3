@@ -22,8 +22,6 @@ public class CanadianIncomeTaxManager {
             throw new RuntimeException(e);
         }
         return incomeTaxData;
-
-
     }
 
 
