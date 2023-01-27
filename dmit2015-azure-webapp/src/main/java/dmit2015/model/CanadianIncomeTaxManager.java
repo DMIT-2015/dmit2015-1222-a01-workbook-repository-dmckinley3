@@ -1,15 +1,35 @@
 package dmit2015.model;
 
-import java.io.IOException;
+import lombok.Getter;
+
 import java.net.URISyntaxException;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CanadianIncomeTaxManager {
 
-    public List<String> fetchIncomeTaxData() {
+    //define a private constructor to implement Single pattern
+    private CanadianIncomeTaxManager() {
+
+    }
+
+    //define a single instance of this class
+    private static CanadianIncomeTaxManager INSTANCE;
+
+    //define a static-class level to access the singleton
+    public static CanadianIncomeTaxManager getInstance() {
+        if (INSTANCE == null) {
+            INSTANCE = new CanadianIncomeTaxManager();
+            return INSTANCE;
+        }
+        return null;
+    }
+
+    @Getter
+    private List<CanadianPersonalIncomeTaxRate> incomeTaxRates;
+
+    public void loadDataFromFile() {
 
         List<String> incomeTaxData = new ArrayList<>();
         try {
@@ -17,11 +37,11 @@ public class CanadianIncomeTaxManager {
                     getClass()
                             .getClassLoader()
                             .getResource("data/CanadianPersonalIncomeTaxRates.csv").toURI());
-            incomeTaxData = Files.readAllLines(csvPath);
-        } catch (URISyntaxException | IOException e) {
+            //  incomeTaxRates = Files.readAllLines(csvPath);
+        } catch (URISyntaxException e) {
             throw new RuntimeException(e);
         }
-        return incomeTaxData;
+
     }
 
 
